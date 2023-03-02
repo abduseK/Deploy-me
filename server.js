@@ -1,8 +1,8 @@
 const { rmSync } = require('fs')
 const http = require('http')
 
-const hostname = '0.0.0.0'
-const port = 3300
+// const hostname = '0.0.0.0'
+const PORT = process.env.PORT || 3300;
 
 const server = http.createServer((req, res) => {
     res.statusCode = 200
@@ -10,6 +10,6 @@ const server = http.createServer((req, res) => {
     res.end('Deploy Me')
 })
 
-server.listen(port, hostname, () => {
+server.listen(PORT, () => {
     console.log('Server running at port: 3300')
 })
